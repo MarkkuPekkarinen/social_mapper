@@ -129,7 +129,7 @@ def fill_facebook(peoplelist):
         #for profilelink,distance in profilelist:
         for profilelink,profilepic,distance,cdnpicture in profilelist:
             try:
-                os.remove("potential_target_image.jpg")
+                os.remove("potential_target_image")
             except:
                 pass
             if early_break:
@@ -146,12 +146,12 @@ def fill_facebook(peoplelist):
                     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14'}
                     # Get target image using requests, providing Selenium cookies, and fake user agent
                     response = requests.get(image_link, cookies=cookies,headers=headers,stream=True)
-                    with open('potential_target_image.jpg', 'wb') as out_file:
+                    with open('potential_target_image', 'wb') as out_file:
                         # Facebook images are sent content encoded so need to decode them
                         response.raw.decode_content = True
                         shutil.copyfileobj(response.raw, out_file)
                     del response
-                    potential_target_image = face_recognition.load_image_file("potential_target_image.jpg")
+                    potential_target_image = face_recognition.load_image_file("potential_target_image")
                     try: # try block for when an image has no faces
                         potential_target_encoding = face_recognition.face_encodings(potential_target_image)[0]
                     except:
@@ -237,7 +237,7 @@ def fill_twitter(peoplelist):
         updatedlist = []
         for profilelink,profilepic,distance in profilelist:
             try:
-                os.remove("potential_target_image.jpg")
+                os.remove("potential_target_image")
             except:
                 pass
             if early_break:
@@ -245,8 +245,8 @@ def fill_twitter(peoplelist):
             image_link = profilepic
             if image_link:
                 try:
-                    urllib.request.urlretrieve(image_link, "potential_target_image.jpg")
-                    potential_target_image = face_recognition.load_image_file("potential_target_image.jpg")
+                    urllib.request.urlretrieve(image_link, "potential_target_image")
+                    potential_target_image = face_recognition.load_image_file("potential_target_image")
                     try: # try block for when an image has no faces
                         potential_target_encoding = face_recognition.face_encodings(potential_target_image)[0]
                     except:
@@ -322,7 +322,7 @@ def fill_instagram(peoplelist):
         updatedlist = []
         for profilelink,profilepic,distance in profilelist:
             try:
-                os.remove("potential_target_image.jpg")
+                os.remove("potential_target_image")
             except:
                 pass
             if early_break:
@@ -330,8 +330,8 @@ def fill_instagram(peoplelist):
             image_link = profilepic
             if image_link:
                 try:
-                    urllib.request.urlretrieve(image_link, "potential_target_image.jpg")
-                    potential_target_image = face_recognition.load_image_file("potential_target_image.jpg")
+                    urllib.request.urlretrieve(image_link, "potential_target_image")
+                    potential_target_image = face_recognition.load_image_file("potential_target_image")
                     try: # try block for when an image has no faces
                         potential_target_encoding = face_recognition.face_encodings(potential_target_image)[0]
                     except:
@@ -406,7 +406,7 @@ def fill_linkedin(peoplelist):
         updatedlist = []
         for profilelink,profilepic,distance in profilelist:
             try:
-                os.remove("potential_target_image.jpg")
+                os.remove("potential_target_image")
             except:
                 pass
             if early_break:
@@ -414,8 +414,8 @@ def fill_linkedin(peoplelist):
             image_link = profilepic
             if image_link:
                 try:
-                    urllib.request.urlretrieve(image_link, "potential_target_image.jpg")
-                    potential_target_image = face_recognition.load_image_file("potential_target_image.jpg")
+                    urllib.request.urlretrieve(image_link, "potential_target_image")
+                    potential_target_image = face_recognition.load_image_file("potential_target_image")
                     try: # try block for when an image has no faces
                         potential_target_encoding = face_recognition.face_encodings(potential_target_image)[0]
                     except:
@@ -486,7 +486,7 @@ def fill_vkontakte(peoplelist):
         updatedlist = []
         for profilelink,profilepic,distance in profilelist:
             try:
-                os.remove("potential_target_image.jpg")
+                os.remove("potential_target_image")
             except:
                 pass
             if early_break:
@@ -494,8 +494,8 @@ def fill_vkontakte(peoplelist):
             image_link = profilepic
             if image_link:
                 try:
-                    urllib.request.urlretrieve(image_link, "potential_target_image.jpg")
-                    potential_target_image = face_recognition.load_image_file("potential_target_image.jpg")
+                    urllib.request.urlretrieve(image_link, "potential_target_image")
+                    potential_target_image = face_recognition.load_image_file("potential_target_image")
                     try: # try block for when an image has no faces
                         potential_target_encoding = face_recognition.face_encodings(potential_target_image)[0]
                     except:
@@ -566,7 +566,7 @@ def fill_weibo(peoplelist):
         updatedlist = []
         for profilelink,profilepic,distance in profilelist:
             try:
-                os.remove("potential_target_image.jpg")
+                os.remove("potential_target_image")
             except:
                 pass
             if early_break:
@@ -574,8 +574,8 @@ def fill_weibo(peoplelist):
             image_link = profilepic
             if image_link:
                 try:
-                    urllib.request.urlretrieve(image_link, "potential_target_image.jpg")
-                    potential_target_image = face_recognition.load_image_file("potential_target_image.jpg")
+                    urllib.request.urlretrieve(image_link, "potential_target_image")
+                    potential_target_image = face_recognition.load_image_file("potential_target_image")
                     try: # try block for when an image has no faces
                         potential_target_encoding = face_recognition.face_encodings(potential_target_image)[0]
                     except:
@@ -646,7 +646,7 @@ def fill_douban(peoplelist):
         updatedlist = []
         for profilelink,profilepic,distance in profilelist:
             try:
-                os.remove("potential_target_image.jpg")
+                os.remove("potential_target_image")
             except:
                 pass
             if early_break:
@@ -654,8 +654,8 @@ def fill_douban(peoplelist):
             image_link = profilepic
             if image_link:
                 try:
-                    urllib.request.urlretrieve(image_link, "potential_target_image.jpg")
-                    potential_target_image = face_recognition.load_image_file("potential_target_image.jpg")
+                    urllib.request.urlretrieve(image_link, "potential_target_image")
+                    potential_target_image = face_recognition.load_image_file("potential_target_image")
                     try: # try block for when an image has no faces
                         potential_target_encoding = face_recognition.face_encodings(potential_target_image)[0]
                     except:
@@ -719,7 +719,8 @@ def login():
     try:
         cookie = cookiejar._cookies['.www.linkedin.com']['/']['li_at'].value
     except:
-        print("cookie debug")
+        print("Error logging in! Try changing language on social networks or verifying login data.")
+        print("If a capcha is required to login (due to excessive attempts) it will keep failing, try using a VPN or running with the -s flag to show the browser, where you can manually solve the capcha.")
         sys.exit(0)
     cookiejar.save()
     os.remove(cookie_filename)
@@ -740,14 +741,16 @@ def authenticate():
 
 def loadPage(client, url, data=None):
     try:
-        response = client.open(url)
-    except:
-        print("[!] Cannot load main LinkedIn page")
-    try:
         if data is not None:
-            response = client.open(url, data.encode("utf-8"))
+            try:
+                response = client.open(url, data.encode("utf-8"))
+            except:
+                print("[!] Cannot load main LinkedIn GET page")
         else:
-            response = client.open(url)
+            try:
+                response = client.open(url)
+            except:
+                print("[!] Cannot load main LinkedIn POST page")
         emptybyte = bytearray()
         return emptybyte.join(response.readlines())
     except:
@@ -910,7 +913,11 @@ if args.format == "company":
     cookies['JSESSIONID'] = 'ajax:0397788525211216808'
     r = requests.get(url, cookies=cookies, headers=headers)
     content = json.loads(r.text)
-    data_total = content['elements'][0]['total']
+    try :
+      data_total = content['elements'][0]['total']
+    except IndexError:
+        print("Company has no people listed, nothing to match against other Social Networks!")
+        sys.exit(0)
 
     # Calculate pages off final results at 40 results/page
     pages = math.ceil(data_total / 40)
